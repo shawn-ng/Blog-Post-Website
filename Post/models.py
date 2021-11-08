@@ -13,3 +13,4 @@ class Post(models.Model):
     image_url = models.URLField(blank=True, null=True)
     post_paragraph = models.TextField(blank=True, null=True)
     post_description = models.TextField(max_length=500, blanl=True, null=True)
+    post_created = models.DateTimeField(auto_now_add=True)
