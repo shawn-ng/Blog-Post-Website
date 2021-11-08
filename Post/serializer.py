@@ -5,7 +5,8 @@ from Post.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
-    model = Post
-    feild = ['post_id', 'post_id_post', 'image_url',
-             'post_paragraph', 'post_description']
-    depth = 2
+    class Meta:
+        model = Post
+        fields = ['post_id', 'profile_id_post', 'image_url',
+                  'post_paragraph', 'post_description']
+        depth = 2
