@@ -16,6 +16,6 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
     # this is to only get the login user profile
     def get_queryset(self):
-        user = self.request.user
+        user = self.request.user.id
         data = UserProfile.objects.filter(user_id_profile=user)
         return data
