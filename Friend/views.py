@@ -16,7 +16,8 @@ class FriendViewSet(viewsets.ModelViewSet):
         friend_data_one = FriendSerializer(data=request.data)
         friend_data_two = FriendSerializer(data={
             'user_friend_id_one': request.data['user_friend_id_two'],
-            'user_friend_id_two': request.data['user_friend_id_one']
+            'user_friend_id_two': request.data['user_friend_id_one'],
+            'request_status': False
         })
 
         # saving the data and uploading it
