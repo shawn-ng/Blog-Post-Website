@@ -15,3 +15,4 @@ class UserProfile(models.Model):
     date_of_birth = models.DateField(blank=True, null=True)
     place_of_birth = models.CharField(max_length=50, blank=True, null=True)
     contact_number = models.IntegerField(blank=True, null=True)
+    private = models.BooleanField(default=False)
