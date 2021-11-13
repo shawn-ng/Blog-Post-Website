@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 from Post.models import Post
 from Post.serializer import PostSerializer
@@ -68,3 +69,15 @@ class PostViewSet(viewsets.ModelViewSet):
         result_post_array = posts_pk + user_profile_posts_pk
 
         return Post.objects.filter(pk__in=result_post_array)
+
+    def destroy(self, request, pk):
+
+        post = Post.objects.filter(post_id=pk)
+
+        for profile in post:
+
+            if self.request.user == profile.profile_id.user_id_profile:
+                post.delete()
+                return Response(f'Post deleted: {pk}', status=status.HTTP_200_OK)
+
+        return Response('Failed to delete', status=status.HTTP_403_FORBIDDEN)
