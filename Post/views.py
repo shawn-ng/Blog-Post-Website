@@ -11,3 +11,6 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
+
+    # creating a get request where all the post that friend post will be seen
+    # get friends' blog post and portray it.
