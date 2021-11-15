@@ -11,6 +11,8 @@ class UserProfile(models.Model):
     # on_delete models.CASCADE is when i delete the user the reference/ user profile will also be deleted
     user_id_profile = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    profile_name = models.CharField(max_length=50, blank=True, null=True)
+    profile_image_url = models.URLField(blank=True, null=True)
     description = models.TextField(max_length=500, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
     place_of_birth = models.CharField(max_length=50, blank=True, null=True)

@@ -9,3 +9,4 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ['post_id', 'profile_id', 'image_url',
                   'post_paragraph', 'post_description']
+        depth = 1
