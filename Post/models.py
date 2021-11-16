@@ -10,6 +10,7 @@ class Post(models.Model):
     post_id = models.UUIDField(
         primary_key=True, unique=True, editable=False, default=uuid.uuid1)
     profile_id = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50, blank=True, null=True)
     image_url = models.URLField(blank=True, null=True)
     post_paragraph = models.TextField(blank=True, null=True)
     post_description = models.TextField(max_length=500, blank=True, null=True)
