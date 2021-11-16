@@ -8,5 +8,5 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['post_id', 'profile_id', 'image_url',
-                  'post_paragraph', 'post_description']
+                  'post_paragraph', 'post_description', 'title']
         depth = 1
