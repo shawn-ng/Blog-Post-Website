@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'User',
     'UserProfile',
     'Post',
-    'Friend'
+    'Friend',
+    'SingleProfilePost'
 ]
 
 AUTH_USER_MODEL = 'User.MyUser'
