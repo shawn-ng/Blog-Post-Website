@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include("Friend.urls")),
     path('', include("Post.urls")),
     path('', include("SingleProfilePost.urls")),
+    path('', include("FindUser.urls")),
     path('admin/', admin.site.urls),
     # this api/token/ is to login and getting token
     path('api/token/', jwt_views.TokenObtainPairView.as_view(),
