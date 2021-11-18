@@ -7,7 +7,7 @@ from .serializer import SearchUserSerializer
 
 
 class SearchUserView(viewsets.ModelViewSet):
-    search_fields = ['username', 'first_name', 'last_name']
+    search_fields = ['username', 'first_name', 'last_name', 'id']
     filter_backends = (filters.SearchFilter,)
     queryset = get_user_model().objects.all()
     serializer_class = SearchUserSerializer

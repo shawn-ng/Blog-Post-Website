@@ -11,3 +11,5 @@ class Friend(models.Model):
     user_friend_id_two = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_friend_id_two')
     request_status = models.BooleanField(default=False)
+    who_send = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='who_send', null=True, blank=True)
